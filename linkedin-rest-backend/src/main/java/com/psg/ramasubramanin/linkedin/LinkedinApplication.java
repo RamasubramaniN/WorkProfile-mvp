@@ -1,4 +1,4 @@
-package com.psg.ramasubramanin.linkedn;
+package com.psg.ramasubramanin.linkedin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
