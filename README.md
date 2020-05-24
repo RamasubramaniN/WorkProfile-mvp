@@ -26,9 +26,9 @@ lastname text,
 dob timestamp, 
 email text,
 about text,
-publication text,
-education_history text,
-job_history text,
-language_known text,
+publication list<frozen<map<text, text>>>,
+education_history list<frozen<map<text, text>>>,
+job_history list<frozen<map<text, text>>>,
+language_known list<text>,
 PRIMARY KEY(id) 
 );
