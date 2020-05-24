@@ -1,15 +1,19 @@
 Setup Cassandra in Local
 ----------------------------------
 Start Cassandra server : ./cassandra
+
 Start Cassandra Client : ./cqlsh
 
 BANXXXXXXe:bin ram$ ./cqlsh
+
 Connected to Test Cluster at 127.0.0.1:9042.
+
 [cqlsh 5.0.1 | Cassandra 3.0.20 | CQL spec 3.4.0 | Native protocol v4]
 
 Create Keyspace
 -----------------
 cqlsh> CREATE KEYSPACE linkedinkeyspace WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
+
 cqlsh> USE linkedinkeyspace;
 
 Create tables
