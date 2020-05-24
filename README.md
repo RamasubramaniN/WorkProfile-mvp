@@ -47,3 +47,4 @@ UPDATE user_profile SET job_history = job_history + [{'fromYear':'2010','toYear'
 
 UPDATE user_profile SET language_known = language_known + ['Tamil','English'] WHERE id = 9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6;
 
+UPDATE user_profile SET dob = '2000-01-01' WHERE id = 9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6;
