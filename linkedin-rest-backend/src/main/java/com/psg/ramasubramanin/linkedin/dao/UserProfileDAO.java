@@ -3,6 +3,8 @@ package com.psg.ramasubramanin.linkedin.dao;
 import com.psg.ramasubramanin.linkedin.model.UserProfile;
 import org.springframework.data.cassandra.repository.CassandraRepository;
 
+import java.util.UUID;
+
 public interface UserProfileDAO {
 
     /**
@@ -10,5 +12,5 @@ public interface UserProfileDAO {
      * @param id
      * @return UserProfile
      */
-    UserProfile findById(Integer id);
+    UserProfile findById(UUID id);
 }

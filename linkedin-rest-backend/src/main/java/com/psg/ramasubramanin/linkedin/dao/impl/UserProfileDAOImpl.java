@@ -1,18 +1,22 @@
 package com.psg.ramasubramanin.linkedin.dao.impl;
 
 import com.datastax.driver.core.LocalDate;
+import com.datastax.driver.core.ResultSet;
 import com.datastax.driver.core.Row;
 import com.datastax.driver.core.exceptions.DriverException;
 import com.google.gson.Gson;
 import com.psg.ramasubramanin.linkedin.dao.UserProfileDAO;
 import com.psg.ramasubramanin.linkedin.model.UserProfile;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cassandra.core.RowMapper;
+import org.springframework.dao.DataAccessException;
 import org.springframework.data.cassandra.core.CassandraOperations;
+import org.springframework.data.cassandra.core.cql.ResultSetExtractor;
+import org.springframework.data.cassandra.core.cql.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.UUID;
 
 @Repository
 public class UserProfileDAOImpl implements UserProfileDAO {
@@ -27,16 +31,16 @@ public class UserProfileDAOImpl implements UserProfileDAO {
     }
 
     @Override
-    public UserProfile findById(Integer id) {
-        String query = "SELECT * FROM user_profile WHERE id = " + id;
-        List<UserProfile> userProfileList = cassandraOperations.query(query, new UserProfileRowMapper());
+    public UserProfile findById(UUID id) {
+        String query = "SELECT * FROM user_profile WHERE id = " + id;List<UserProfile> userProfileList = cassandraOperations.query(query, new UserProfileRowMapper());
         return userProfileList.get(0);
     }
 
 }
-class UserProfileRowMapper implements RowMapper<UserProfile> {
+class UserProfileRowMapper implements ResultSetExtractor<UserProfile> {
+
     @Override
-    public UserProfile mapRow(Row row, int i) throws DriverException {
+    public UserProfile extractData(ResultSet row) throws DriverException {
         if(i > 0)
             return null;
         UserProfile userProfile = new UserProfile();
@@ -48,5 +52,10 @@ class UserProfileRowMapper implements RowMapper<UserProfile> {
         userProfile.setFirstname(row.getString("firstname"));
         userProfile.setLastname(row.getString("lastname"));
         return userProfile;
+    }
+
+    @Override
+    public UserProfile extractData(ResultSet resultSet) throws DriverException, DataAccessException {
+        return null;
     }
 }
