@@ -20,6 +20,6 @@ public class UserProfileServiceImpl implements UserProfileService {
 
     @Override
     public UserProfile findById(UUID id) {
-        return userProfileDAO.findById(id);
+        return userProfileDAO.findById(id).get();
     }
 }
