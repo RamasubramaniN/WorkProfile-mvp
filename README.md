@@ -109,11 +109,11 @@ VALUES(1, 'noname@noname.com', 2010, 2013, 'Bangalore', 'Subex India Private Lim
 
 
 INSERT INTO job_history (id, email, from_year, to_year, location, employer_name, designation)
-VALUES(1, 'noname@noname.com', 2013, 2017, 'Bangalore', 'Fiberlink India Private Limited', 'Staff Software Engineer');
+VALUES(2, 'noname@noname.com', 2013, 2017, 'Bangalore', 'Fiberlink India Private Limited', 'Staff Software Engineer');
 
 
 INSERT INTO job_history (id, email, from_year, to_year, location, employer_name, designation)
-VALUES(1, 'noname@noname.com', 2017, 2020, 'Bangalore', 'Intuit India Private Limited', 'Senior Software Engineer');
+VALUES(3, 'noname@noname.com', 2017, 2020, 'Bangalore', 'Intuit India Private Limited', 'Senior Software Engineer');
 
 
 If we maintain other details in user_profile table
