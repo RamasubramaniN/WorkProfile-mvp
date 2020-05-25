@@ -18,7 +18,9 @@ cqlsh> USE linkedinkeyspace;
 
 Create tables
 ---------------------------
+
 1. User Profile
+-----------------
 
 CREATE TABLE user_profile
 ( 
@@ -30,7 +32,8 @@ about text,
 PRIMARY KEY(id) 
 );
   
-2. Find Publication By email
+2. Find Publication by email
+------------------------------
 CREATE TABLE publication
 ( 
 email text,
@@ -40,7 +43,8 @@ year int,
 PRIMARY KEY(email) 
 );
 
-3. Find Job History By email
+3. Find Job History by email
+-----------------------------
 CREATE TABLE job_history
 (
 email text,
@@ -53,6 +57,7 @@ PRIMARY KEY(email)
 );
 
 4. Find Education by email
+---------------------------
 CREATE table education
 (
 email text,
@@ -65,6 +70,13 @@ institution_name text,
 degree_name text,
 PRIMARY KEY(email)
 );
+
+
+
+
+
+
+
 
 Add Records in the table
 ----------------------------
