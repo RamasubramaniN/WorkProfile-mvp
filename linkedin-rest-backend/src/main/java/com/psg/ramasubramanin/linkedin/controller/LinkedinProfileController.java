@@ -1,5 +1,6 @@
 package com.psg.ramasubramanin.linkedin.controller;
 
+import com.psg.ramasubramanin.linkedin.cassandra.model.UserProfileDataModel;
 import com.psg.ramasubramanin.linkedin.model.UserProfile;
 import com.psg.ramasubramanin.linkedin.service.UserProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +26,5 @@ public class LinkedinProfileController {
     private UserProfile getUserProfile(@PathVariable String userId) {
         return userProfileService.findById(UUID.fromString(userId));
     }
-
+//https://stackoverflow.com/questions/51829850/how-to-mix-manual-sql-row-mapping-with-crudrepository-spring-data
 }

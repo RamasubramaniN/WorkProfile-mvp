@@ -8,7 +8,8 @@ public interface UserProfileService {
     /**
      * Get {@link UserProfile} by id.
      * @param id
-     * @return UserProfile
+     * @return @{@link UserProfile}
      */
     UserProfile findById(UUID id);
+
 }
