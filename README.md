@@ -21,7 +21,6 @@ Create tables
 
 1. User Profile
 -----------------
-
 CREATE TABLE user_profile
 ( 
 id uuid, 
@@ -31,6 +30,8 @@ email text,
 about text,
 PRIMARY KEY(id) 
 );
+
+
   
 2. Find Publication by email
 ------------------------------
@@ -42,6 +43,8 @@ content text,
 year int,
 PRIMARY KEY(email) 
 );
+
+
 
 3. Find Job History by email
 -----------------------------
@@ -55,6 +58,8 @@ employer_name text,
 location text,
 PRIMARY KEY(email)
 );
+
+
 
 4. Find Education by email
 ---------------------------
@@ -70,8 +75,6 @@ institution_name text,
 degree_name text,
 PRIMARY KEY(email)
 );
-
-
 
 
 
