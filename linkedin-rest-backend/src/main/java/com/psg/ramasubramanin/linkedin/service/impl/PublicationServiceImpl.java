@@ -21,7 +21,7 @@ public class PublicationServiceImpl implements PublicationService {
     }
 
     @Override
-    public List<Publication> getPublicationList(List<String> email) {
+    public List<Publication> getPublicationList(String email) {
         List<Publication> publicationList = new ArrayList<>();
         List<PublicationDataModel> publicationDataModelList = publicationDAO.getPublicationList(email);
         publicationDataModelList.forEach(model -> {

@@ -22,9 +22,9 @@ public class LinkedinProfileController {
         this.userProfileService = userProfileService;
     }
 
+    //http://localhost:8080/linkedin/users/9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6
     @GetMapping(path = "/{userId}", produces = "application/json")
     private UserProfile getUserProfile(@PathVariable String userId) {
         return userProfileService.findById(UUID.fromString(userId));
     }
-//https://stackoverflow.com/questions/51829850/how-to-mix-manual-sql-row-mapping-with-crudrepository-spring-data
 }

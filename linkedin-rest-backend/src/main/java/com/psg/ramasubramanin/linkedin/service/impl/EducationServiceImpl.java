@@ -21,8 +21,8 @@ public class EducationServiceImpl implements EducationService {
     }
 
     @Override
-    public List<Education> getEducationList(List<String> emailList) {
-        List<EducationDataModel> educationDataModelList = educationDAO.getEducationHistoryList(emailList);
+    public List<Education> getEducationList(String email) {
+        List<EducationDataModel> educationDataModelList = educationDAO.getEducationHistoryList(email);
         List<Education> educationList = new ArrayList<>();
         for(EducationDataModel model : educationDataModelList) {
             Education education = new Education(model.getFromYear(), model.getToYear(), model.getDegreeName()

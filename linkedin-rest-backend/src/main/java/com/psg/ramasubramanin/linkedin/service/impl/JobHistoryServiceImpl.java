@@ -21,9 +21,9 @@ public class JobHistoryServiceImpl implements JobHistoryService {
     }
 
     @Override
-    public List<JobHistory> getJobHistoryList(List<String> emailList) {
+    public List<JobHistory> getJobHistoryList(String email) {
         List<JobHistory> jobHistoryList = new ArrayList<>();
-        List<JobHistoryDataModel> jobHistoryDataModelList = new ArrayList<>();
+        List<JobHistoryDataModel> jobHistoryDataModelList = jobHistoryDAO.getJobHistoryList(email);
         jobHistoryDataModelList.forEach(model -> {
             JobHistory jobHistory = new JobHistory(model.getDesignation(), model.getEmployerName(),
                     model.getLocation(), model.getFromYear(), model.getToYear());

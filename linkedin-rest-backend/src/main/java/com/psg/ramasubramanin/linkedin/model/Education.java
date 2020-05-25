@@ -1,7 +1,6 @@
 package com.psg.ramasubramanin.linkedin.model;
 
 import lombok.Getter;
-
 import java.io.Serializable;
 
 @Getter
@@ -17,7 +16,7 @@ public class Education implements Serializable {
 
     public Education(Integer fromYear, Integer toYear, String degreeName,
                      String institutionName, String location, Double totalGrade,
-                     Double obtainedGrade {
+                     Double obtainedGrade) {
         this.fromYear = fromYear;
         this.totalGrade = totalGrade;
         this.toYear = toYear;

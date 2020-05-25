@@ -10,5 +10,5 @@ public interface EducationService {
      * @param email
      * @return @{@link java.util.ArrayList}{@link Education}
      */
-    List<Education> getEducationList((String email);
+    List<Education> getEducationList(String email);
 }

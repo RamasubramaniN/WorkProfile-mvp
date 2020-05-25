@@ -1,7 +1,6 @@
 package com.psg.ramasubramanin.linkedin.model;
 
 import lombok.Getter;
-
 import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
