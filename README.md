@@ -37,11 +37,12 @@ PRIMARY KEY(id)
 ------------------------------
 CREATE TABLE publication
 ( 
+id int,
 email text,
 title text,
 content text,
 year int,
-PRIMARY KEY(email) 
+PRIMARY KEY(email, id) 
 );
 
 
@@ -50,13 +51,14 @@ PRIMARY KEY(email)
 -----------------------------
 CREATE TABLE job_history
 (
+id int,
 email text,
 from_year int,
 to_year int,
 designation text,
 employer_name text,
 location text,
-PRIMARY KEY(email)
+PRIMARY KEY(email, id)
 );
 
 
@@ -65,6 +67,7 @@ PRIMARY KEY(email)
 ---------------------------
 CREATE table education
 (
+id int,
 email text,
 from_year int,
 to_year int,
@@ -73,7 +76,7 @@ obtained_grade float,
 location text,
 institution_name text,
 degree_name text,
-PRIMARY KEY(email)
+PRIMARY KEY(email, id)
 );
 
 
@@ -83,17 +86,34 @@ PRIMARY KEY(email)
 
 Add Records in the table
 ----------------------------
-INSERT INTO user_profile (id, firstname, lastname, about) 
-VALUES (9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6, 'Ramasubramani', 'N','Passionate Programmer');
+INSERT INTO user_profile (id, firstname, lastname, about, email) 
+VALUES (9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6, 'Ramasubramani', 'N','Passionate Programmer', 'noname@noname.com');
 
 
+INSERT INTO publication(id, title, year, content, email) VALUES(1, 'Publication1', 2015, 'Content1', 'noname@noname.com');
 
 
+INSERT INTO publication(id, title, year, content, email) VALUES(2, 'Publication2', 2020, 'Content2', 'noname@noname.com');
 
 
+INSERT INTO education(id, email, from_year, to_year, total_grade, obtained_grade, location, institution_name, degree_name)
+VALUES(1, 'noname@noname.com', 2006, 2010, 10.0, 8.79, 'Coimbatore', 'PSG', 'Engineering');
 
 
+INSERT INTO education(id, email, from_year, to_year, total_grade, obtained_grade, location, institution_name, degree_name)
+VALUES(2, 'noname@noname.com', 2013, 2015, 10.0, 8.63, 'Pilani', 'BITS', 'Masters');
 
+
+INSERT INTO job_history (id, email, from_year, to_year, location, employer_name, designation)
+VALUES(1, 'noname@noname.com', 2010, 2013, 'Bangalore', 'Subex India Private Limited', 'Software Engineer');
+
+
+INSERT INTO job_history (id, email, from_year, to_year, location, employer_name, designation)
+VALUES(1, 'noname@noname.com', 2013, 2017, 'Bangalore', 'Fiberlink India Private Limited', 'Staff Software Engineer');
+
+
+INSERT INTO job_history (id, email, from_year, to_year, location, employer_name, designation)
+VALUES(1, 'noname@noname.com', 2017, 2020, 'Bangalore', 'Intuit India Private Limited', 'Senior Software Engineer');
 
 
 If we maintain other details in user_profile table
