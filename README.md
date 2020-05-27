@@ -92,6 +92,74 @@ Response
   }
 }
 
+One more lighter version of the request. 
+
+Request
+----------
+
+query{
+  user (id:"9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6"){
+    firstname,
+    lastname,
+    email,
+    jobHistory {
+      designation
+      employerName
+    }
+    educationHistory{
+      institutionName
+    }
+    publicationHistory{
+      title
+    }
+  }
+}
+
+
+Response
+----------
+
+{
+  "data": {
+    "user": {
+      "firstname": "Ramasubramani",
+      "lastname": "N",
+      "email": "noname@noname.com",
+      "jobHistory": [
+        {
+          "designation": "Software Engineer",
+          "employerName": "Subex India Private Limited"
+        },
+        {
+          "designation": "Staff Software Engineer",
+          "employerName": "Fiberlink India Private Limited"
+        },
+        {
+          "designation": "Senior Software Engineer",
+          "employerName": "Intuit India Private Limited"
+        }
+      ],
+      "educationHistory": [
+        {
+          "institutionName": "PSG"
+        },
+        {
+          "institutionName": "BITS"
+        }
+      ],
+      "publicationHistory": [
+        {
+          "title": "Publication1"
+        },
+        {
+          "title": "Publication2"
+        }
+      ]
+    }
+  }
+}
+
+
 Web will make a different graphql call from the frontend. Response will include all fields.
 
 
