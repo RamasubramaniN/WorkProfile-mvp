@@ -1,3 +1,8 @@
+This Application has 2 layers.
+1. Node JS + Apollo Server Middleware
+2. REST + Spring Boot + Cassandra Backend.
+
+
 Setup Cassandra in Local
 ----------------------------------
 Start Cassandra server : ./cassandra
