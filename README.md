@@ -53,7 +53,7 @@ npm start
 Request
 --------
 
-query{
+```query{
   user (id:"9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6"){
     firstname,
     lastname,
@@ -63,12 +63,12 @@ query{
       employerName
     }
   }
-}
+}```
 
 Response
 ---------
 
-{
+```{
   "data": {
     "user": {
       "firstname": "Ramasubramani",
@@ -90,7 +90,7 @@ Response
       ]
     }
   }
-}
+}```
 
 One more lighter version of the request. 
 
