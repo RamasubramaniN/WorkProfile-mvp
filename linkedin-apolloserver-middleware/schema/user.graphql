@@ -1,0 +1,38 @@
+type Query {
+    user(id: String): UserProfile
+}
+
+type UserProfile {
+    userId: ID
+    firstname: String!
+    lastname: String!
+    email: String!
+    about: String!
+    jobHistoryList: [JobHistory]
+    educationHistoryList: [Education]
+    publicationList: [Publication]
+}
+
+type Education {
+    fromYear: Int!
+    toYear: Int!
+    totalGrade: Float!
+    obtainedGrade: Float!
+    location: String!
+    institutionName: String!
+    degreeName: String!
+}
+
+type JobHistory {
+    fromYear: Int!
+    toYear: Int!
+    designation: String!
+    employerName: String!
+    location: String!
+}
+
+type Publication {
+    year: Int!
+    title: String!
+    content: String!
+}
