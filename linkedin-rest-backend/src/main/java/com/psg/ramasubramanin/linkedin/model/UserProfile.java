@@ -12,20 +12,20 @@ public class UserProfile implements Serializable {
     private String lastname;
     private String email;
     private String about;
-    private List<JobHistory> jobHistoryList;
-    private List<Education> educationHistoryList;
-    private List<Publication> publicationList;
+    private List<JobHistory> jobHistory;
+    private List<Education> educationHistory;
+    private List<Publication> publicationHistory;
 
     public UserProfile(UUID userId, String firstname, String lastname,
-                       String about, String email, List<JobHistory> jobHistoryList,
-                       List<Education> educationHistoryList, List<Publication> publicationList) {
+                       String about, String email, List<JobHistory> jobHistory,
+                       List<Education> educationHistory, List<Publication> publicationHistory) {
         this.userId = userId;
         this.firstname = firstname;
         this.lastname = lastname;
         this.about = about;
         this.email = email;
-        this.jobHistoryList = jobHistoryList;
-        this.educationHistoryList = educationHistoryList;
-        this.publicationList = publicationList;
+        this.jobHistory = jobHistory;
+        this.educationHistory = educationHistory;
+        this.publicationHistory = publicationHistory;
     }
 }

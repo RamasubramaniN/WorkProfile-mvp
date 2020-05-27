@@ -8,9 +8,9 @@ type UserProfile {
     lastname: String!
     email: String!
     about: String!
-    jobHistoryList: [JobHistory]
-    educationHistoryList: [Education]
-    publicationList: [Publication]
+    jobHistory: [JobHistory]
+    educationHistory: [Education]
+    publicationHistory: [Publication]
 }
 
 type Education {
