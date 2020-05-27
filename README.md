@@ -53,7 +53,7 @@ npm start
 Request
 --------
 
-`query{
+```query{
   user (id:"9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6"){
     firstname,
     lastname,
@@ -63,12 +63,14 @@ Request
       employerName
     }
   }
-}`
+}
+```
 
 Response
 ---------
 
-`{
+```
+{
   "data": {
     "user": {
       "firstname": "Ramasubramani",
@@ -90,14 +92,16 @@ Response
       ]
     }
   }
-}`
+}
+```
 
 One more lighter version of the request. 
 
 Request
 ----------
 
-`query{
+```
+query{
   user (id:"9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6"){
     firstname,
     lastname,
@@ -113,13 +117,14 @@ Request
       title
     }
   }
-}`
-
+}
+```
 
 Response
 ----------
 
-`{
+```
+{
   "data": {
     "user": {
       "firstname": "Ramasubramani",
@@ -157,8 +162,8 @@ Response
       ]
     }
   }
-}`
-
+}
+```
 
 Web will make a different graphql call from the frontend. Response will include all fields.
 
@@ -180,7 +185,8 @@ http://localhost:8080/linkedin/users/9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6
 API Response
 -------------
 
-`{
+```
+{
     "userId": "9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6",
     "firstname": "Ramasubramani",
     "lastname": "N",
@@ -241,8 +247,8 @@ API Response
             "year": 2020
         }
     ]
-}`
-
+}
+```
 
 Setup Cassandra in Local
 ----------------------------------
@@ -267,6 +273,8 @@ Create tables
 
 1. User Profile
 -----------------
+
+```
 CREATE TABLE user_profile
 ( 
 id uuid, 
@@ -276,11 +284,12 @@ email text,
 about text,
 PRIMARY KEY(id) 
 );
-
+```
 
   
 2. Find Publication by email
 ------------------------------
+```
 CREATE TABLE publication
 ( 
 id int,
@@ -290,11 +299,12 @@ content text,
 year int,
 PRIMARY KEY(email, id) 
 );
-
+```
 
 
 3. Find Job History by email
 -----------------------------
+```
 CREATE TABLE job_history
 (
 id int,
@@ -306,11 +316,12 @@ employer_name text,
 location text,
 PRIMARY KEY(email, id)
 );
-
+```
 
 
 4. Find Education by email
 ---------------------------
+```
 CREATE table education
 (
 id int,
@@ -324,7 +335,7 @@ institution_name text,
 degree_name text,
 PRIMARY KEY(email, id)
 );
-
+```
 
 
 
@@ -332,7 +343,8 @@ PRIMARY KEY(email, id)
 
 Add Records in the table
 ----------------------------
-`INSERT INTO user_profile (id, firstname, lastname, about, email) 
+```
+INSERT INTO user_profile (id, firstname, lastname, about, email) 
 VALUES (9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6, 'Ramasubramani', 'N','Passionate Programmer', 'noname@noname.com');
 
 
@@ -359,11 +371,13 @@ VALUES(2, 'noname@noname.com', 2013, 2017, 'Bangalore', 'Fiberlink India Private
 
 
 INSERT INTO job_history (id, email, from_year, to_year, location, employer_name, designation)
-VALUES(3, 'noname@noname.com', 2017, 2020, 'Bangalore', 'Intuit India Private Limited', 'Senior Software Engineer');`
+VALUES(3, 'noname@noname.com', 2017, 2020, 'Bangalore', 'Intuit India Private Limited', 'Senior Software Engineer');
+```
 
 
-If we maintain other details in user_profile table
+If we maintain all details in user_profile table
 ---------------------------------------------------------
+```
 UPDATE user_profile SET publication = publication + [{'title':'Publication1','content':'Content1','year':'2015'},{'title':'Publication2','content':'Content2','year':'2020'}] WHERE id = 9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6;
 
 UPDATE user_profile SET education_history = education_history + [{'fromYear':'2006','toYear':'2010','obtainedGrade':'8.79','totalGrade':'10.0','location':'Coimbatore','institutionName':'PSG','degreeName':'Engineering'},{'fromYear':'2013','toYear':'2015','obtainedGrade':'8.63','totalGrade':'10.0','location':'Pilani','institutionName':'BITS','degreeName':'Masters'}] WHERE id = 9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6;
@@ -374,3 +388,4 @@ UPDATE user_profile SET job_history = job_history + [{'fromYear':'2010','toYear'
 UPDATE user_profile SET language_known = language_known + ['Tamil','English'] WHERE id = 9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6;
 
 UPDATE user_profile SET dob = '2000-01-01' WHERE id = 9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6;
+```
