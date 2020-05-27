@@ -215,7 +215,7 @@ API Response
             "location": "Bangalore"
         }
     ],
-    "educationHistoryList": [
+    "educationHistory": [
         {
             "fromYear": 2006,
             "toYear": 2010,
@@ -235,7 +235,7 @@ API Response
             "degreeName": "Masters"
         }
     ],
-    "publicationList": [
+    "publicationHistory": [
         {
             "title": "Publication1",
             "content": "Content1",
