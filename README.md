@@ -3,7 +3,7 @@ Application Layers
 
 This Application has 3 sub projects.
 
-1. React + Apollo Client Front End - Yet to build.
+1. React + Apollo Client - Front End - Yet to build.
 
 2. Node JS + Apollo Server - Middleware - https://github.com/RamasubramaniN/Linkedin-mvp/tree/master/linkedin-apolloserver-middleware
 
