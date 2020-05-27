@@ -53,7 +53,7 @@ npm start
 Request
 --------
 
-```query{
+`query{
   user (id:"9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6"){
     firstname,
     lastname,
@@ -63,12 +63,12 @@ Request
       employerName
     }
   }
-}```
+}`
 
 Response
 ---------
 
-```{
+`{
   "data": {
     "user": {
       "firstname": "Ramasubramani",
@@ -90,14 +90,14 @@ Response
       ]
     }
   }
-}```
+}`
 
 One more lighter version of the request. 
 
 Request
 ----------
 
-query{
+`query{
   user (id:"9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6"){
     firstname,
     lastname,
@@ -113,13 +113,13 @@ query{
       title
     }
   }
-}
+}`
 
 
 Response
 ----------
 
-{
+`{
   "data": {
     "user": {
       "firstname": "Ramasubramani",
@@ -157,7 +157,7 @@ Response
       ]
     }
   }
-}
+}`
 
 
 Web will make a different graphql call from the frontend. Response will include all fields.
@@ -180,7 +180,7 @@ http://localhost:8080/linkedin/users/9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6
 API Response
 -------------
 
-{
+`{
     "userId": "9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6",
     "firstname": "Ramasubramani",
     "lastname": "N",
@@ -241,7 +241,7 @@ API Response
             "year": 2020
         }
     ]
-}
+}`
 
 
 Setup Cassandra in Local
@@ -332,7 +332,7 @@ PRIMARY KEY(email, id)
 
 Add Records in the table
 ----------------------------
-INSERT INTO user_profile (id, firstname, lastname, about, email) 
+`INSERT INTO user_profile (id, firstname, lastname, about, email) 
 VALUES (9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6, 'Ramasubramani', 'N','Passionate Programmer', 'noname@noname.com');
 
 
@@ -359,7 +359,7 @@ VALUES(2, 'noname@noname.com', 2013, 2017, 'Bangalore', 'Fiberlink India Private
 
 
 INSERT INTO job_history (id, email, from_year, to_year, location, employer_name, designation)
-VALUES(3, 'noname@noname.com', 2017, 2020, 'Bangalore', 'Intuit India Private Limited', 'Senior Software Engineer');
+VALUES(3, 'noname@noname.com', 2017, 2020, 'Bangalore', 'Intuit India Private Limited', 'Senior Software Engineer');`
 
 
 If we maintain other details in user_profile table
