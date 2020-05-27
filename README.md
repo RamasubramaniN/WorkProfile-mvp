@@ -1,6 +1,179 @@
-This Application has 2 layers.
-1. Node JS + Apollo Server Middleware
-2. REST + Spring Boot + Cassandra Backend.
+Application Layers
+-------------------
+
+This Application has 3 sub projects.
+
+1. React + Apollo Client Front End - Yet to build.
+
+2. Node JS + Apollo Server - Middleware - https://github.com/RamasubramaniN/Linkedin-mvp/tree/master/linkedin-apolloserver-middleware
+
+3. REST + Spring Boot + Cassandra - Backend - https://github.com/RamasubramaniN/Linkedin-mvp/tree/master/linkedin-rest-backend
+
+Architecture
+--------------
+We build separate versions of APIs for Mobile & Web. This is because we may not require complete response for Mobile (bandwidth constraint) but Web will require all data.
+
+Here, Linkedin app has 2 versions.
+
+1. Mobile Version - Displays firstname, lastname & jobHistory.
+
+2. Web version - Displays firstname, lastname, jobHistory, educationHistory & publication history.
+
+We will be able to use same API for both versions of the app with GraphQL.
+
+1. Apollo Client in React UI makes GraphQL call to middleware.
+
+2. Apollo Server middleware acts like orchestrator layer. It understands GraphQL request & route the request to appropriate backend microservice. This is done using Apollo Server RestDatasource module.
+
+3. Spring boot backend app provides REST response. Apollo server converts this response to GraphQL response & send it back to front end.
+
+2.Node JS + Apollo Server - Middleware
+----------------------------------------
+
+This layer is NodeJs application. Apollo Server serves GraphQL requests.
+
+Steps to setup
+---------------
+1) Install Node in local.
+
+2) Install apollo-server, graphql, Rest Datasource libraries using following commands.
+
+npm install apollo-server
+
+npm install apollo-datasource-rest
+
+npm install graphql-import
+
+3) Start the application by following command.
+
+npm start
+
+4) Go to Chrome GraphQL playground. Lets execute query for mobile version.
+
+Request
+--------
+
+query{
+  user (id:"9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6"){
+    firstname,
+    lastname,
+    email,
+    jobHistory {
+      designation
+      employerName
+    }
+  }
+}
+
+Response
+---------
+
+{
+  "data": {
+    "user": {
+      "firstname": "Ramasubramani",
+      "lastname": "N",
+      "email": "noname@noname.com",
+      "jobHistory": [
+        {
+          "designation": "Software Engineer",
+          "employerName": "Subex India Private Limited"
+        },
+        {
+          "designation": "Staff Software Engineer",
+          "employerName": "Fiberlink India Private Limited"
+        },
+        {
+          "designation": "Senior Software Engineer",
+          "employerName": "Intuit India Private Limited"
+        }
+      ]
+    }
+  }
+}
+
+Web will make a different graphql call from the frontend. Response will include all fields.
+
+
+
+3.REST + Spring Boot + Cassandra - Backend
+-------------------------------------------
+
+This layer is built using Spring Boot, REST & Cassandra. This layer acts as datasource for middleware.
+
+Following REST API request is made from middleware
+
+API Request
+-------------
+
+http://localhost:8080/linkedin/users/9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6
+
+
+API Response
+-------------
+
+{
+    "userId": "9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6",
+    "firstname": "Ramasubramani",
+    "lastname": "N",
+    "email": "noname@noname.com",
+    "about": "Passionate Programmer",
+    "jobHistory": [
+        {
+            "fromYear": 2010,
+            "toYear": 2013,
+            "designation": "Software Engineer",
+            "employerName": "Subex India Private Limited",
+            "location": "Bangalore"
+        },
+        {
+            "fromYear": 2013,
+            "toYear": 2017,
+            "designation": "Staff Software Engineer",
+            "employerName": "Fiberlink India Private Limited",
+            "location": "Bangalore"
+        },
+        {
+            "fromYear": 2017,
+            "toYear": 2020,
+            "designation": "Senior Software Engineer",
+            "employerName": "Intuit India Private Limited",
+            "location": "Bangalore"
+        }
+    ],
+    "educationHistoryList": [
+        {
+            "fromYear": 2006,
+            "toYear": 2010,
+            "obtainedGrade": 8.789999961853027,
+            "totalGrade": 10.0,
+            "location": "Coimbatore",
+            "institutionName": "PSG",
+            "degreeName": "Engineering"
+        },
+        {
+            "fromYear": 2013,
+            "toYear": 2015,
+            "obtainedGrade": 8.630000114440918,
+            "totalGrade": 10.0,
+            "location": "Pilani",
+            "institutionName": "BITS",
+            "degreeName": "Masters"
+        }
+    ],
+    "publicationList": [
+        {
+            "title": "Publication1",
+            "content": "Content1",
+            "year": 2015
+        },
+        {
+            "title": "Publication2",
+            "content": "Content2",
+            "year": 2020
+        }
+    ]
+}
 
 
 Setup Cassandra in Local
