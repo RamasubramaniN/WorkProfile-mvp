@@ -39,16 +39,18 @@ Steps to setup
 2) Install apollo-server, graphql, Rest Datasource libraries using following commands.
 
 ```
-npm install apollo-server
+   npm install apollo-server
 
-npm install apollo-datasource-rest
+   npm install apollo-datasource-rest
 
-npm install graphql-import
+   npm install graphql-import
 ```
 
 3) Start the application by following command.
 
-npm start
+```
+   npm start
+```
 
 4) Go to Chrome GraphQL playground. Lets execute query for mobile version.
 
