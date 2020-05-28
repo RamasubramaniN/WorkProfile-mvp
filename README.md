@@ -38,13 +38,13 @@ Steps to setup
 
 2) Install apollo-server, graphql, Rest Datasource libraries using following commands.
 
-`
+```
 npm install apollo-server
 
 npm install apollo-datasource-rest
 
 npm install graphql-import
-`
+```
 
 3) Start the application by following command.
 
@@ -256,13 +256,13 @@ Setup Cassandra in Local
 ----------------------------------
 Download Cassandra from official server. Unzip & go to bin folder.
 
-`
+```
 BANXXXXXXe:bin ram$ 
 
 Start Cassandra server : ./cassandra
 
 Start Cassandra Client : ./cqlsh
-`
+```
 
 Connected to Test Cluster at 127.0.0.1:9042.
 
@@ -273,11 +273,11 @@ Create Keyspace
 -----------------
 Create Keyspaces for our tables.
 
-`
+```
 cqlsh> CREATE KEYSPACE linkedinkeyspace WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
 
 cqlsh> USE linkedinkeyspace;
-`
+```
 
 Create tables
 ---------------------------
