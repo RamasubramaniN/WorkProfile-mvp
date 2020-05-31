@@ -14,7 +14,7 @@ Architecture
 --------------
 We build separate versions of APIs for Mobile & Web. This is because we may not require complete response for Mobile (bandwidth constraint) but Web will require all data.
 
-Here, Linkedin app can have multple versions.
+Here, Linkedin app can have multiple versions.
 
 1. Mobile Version - Displays firstname, lastname, email & jobHistory.
 
@@ -22,13 +22,13 @@ Here, Linkedin app can have multple versions.
 
 3. Mobile app lite - Displays firstname, lastname & email, current job.
 
-We will be able to use same API for both versions of the app with GraphQL.
+We will be able to use same backend for any versions of the app using GraphQL capability.
 
-1. Apollo Client in React UI makes GraphQL call to middleware.
+1. React Frontend. Apollo Client makes GraphQL call to middleware. This layer receives GraphQL response.
 
-2. Apollo Server middleware acts like orchestrator layer. It understands GraphQL request & route the request to appropriate backend microservice. This is done using Apollo Server RestDatasource module.
+2. Apollo Server middleware acts like orchestrator layer. It understands GraphQL requests & route requests to appropriate backend microservice. This is done using Apollo Server RestDatasource module. Apollo server maps REST response to GraphQL response.
 
-3. Spring boot backend app provides REST response. Apollo server converts this response to GraphQL response & send it back to front end.
+3. Spring boot backend app is the datasource layer. This is built using Spring Boot, REST & Cassandra. This layer exposes set of REST APIs.
 
 2.Node JS + Apollo Server - Middleware
 ----------------------------------------
