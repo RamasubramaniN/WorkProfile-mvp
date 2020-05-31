@@ -30,7 +30,7 @@ We will be able to use same API for both versions of the app with GraphQL.
 2.Node JS + Apollo Server - Middleware
 ----------------------------------------
 
-This layer is NodeJs application. Apollo Server serves GraphQL requests.
+This layer is a NodeJs application & this is orchestrator layer. Apollo Server serves GraphQL requests. Node JS cannot scale, So, this layer uses REST layer as datasource, This layer does the routing to appropriate microservices based on GraphQL entity & mapping the responses from REST to GraphQL. 
 
 Steps to setup
 ---------------
