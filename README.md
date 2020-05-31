@@ -169,7 +169,71 @@ Response
 }
 ```
 
-Web will make a different graphql call from the frontend. Response will include all fields.
+For Web version, Client will request all the fields. Sample Response below.
+```
+{
+    "userId": "9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6",
+    "firstname": "Ramasubramani",
+    "lastname": "N",
+    "email": "noname@noname.com",
+    "about": "Passionate Programmer",
+    "jobHistory": [
+        {
+            "fromYear": 2010,
+            "toYear": 2013,
+            "designation": "Software Engineer",
+            "employerName": "Subex India Private Limited",
+            "location": "Bangalore"
+        },
+        {
+            "fromYear": 2013,
+            "toYear": 2017,
+            "designation": "Staff Software Engineer",
+            "employerName": "Fiberlink India Private Limited",
+            "location": "Bangalore"
+        },
+        {
+            "fromYear": 2017,
+            "toYear": 2020,
+            "designation": "Senior Software Engineer",
+            "employerName": "Intuit India Private Limited",
+            "location": "Bangalore"
+        }
+    ],
+    "educationHistory": [
+        {
+            "fromYear": 2006,
+            "toYear": 2010,
+            "obtainedGrade": 8.789999961853027,
+            "totalGrade": 10.0,
+            "location": "Coimbatore",
+            "institutionName": "PSG",
+            "degreeName": "Engineering"
+        },
+        {
+            "fromYear": 2013,
+            "toYear": 2015,
+            "obtainedGrade": 8.630000114440918,
+            "totalGrade": 10.0,
+            "location": "Pilani",
+            "institutionName": "BITS",
+            "degreeName": "Masters"
+        }
+    ],
+    "publicationHistory": [
+        {
+            "title": "Publication1",
+            "content": "Content1",
+            "year": 2015
+        },
+        {
+            "title": "Publication2",
+            "content": "Content2",
+            "year": 2020
+        }
+    ]
+}
+```
 
 
 
