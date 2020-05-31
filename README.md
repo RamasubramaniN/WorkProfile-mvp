@@ -18,9 +18,9 @@ Here, Linkedin app can have multiple versions.
 
 1. Mobile Version - Displays firstname, lastname, email & jobHistory.
 
-2. Web version - Displays firstname, lastname, email jobHistory, educationHistory & publication history.
+2. Web version - Displays firstname, lastname, email, jobHistory, educationHistory & publication history.
 
-3. Mobile app lite - Displays firstname, lastname & email, current job.
+3. Mobile app lite - Displays firstname, lastname, current job.
 
 We will be able to use same backend for any versions of the app using GraphQL capability.
 
