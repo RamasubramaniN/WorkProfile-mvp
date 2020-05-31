@@ -1,5 +1,6 @@
 Application Layers
 -------------------
+Check this link https://www.howtographql.com/basics/1-graphql-is-the-better-rest/ to understand the importance of GraphQL.
 
 This Application has 3 sub projects.
 
@@ -13,11 +14,13 @@ Architecture
 --------------
 We build separate versions of APIs for Mobile & Web. This is because we may not require complete response for Mobile (bandwidth constraint) but Web will require all data.
 
-Here, Linkedin app has 2 versions.
+Here, Linkedin app can have multple versions.
 
-1. Mobile Version - Displays firstname, lastname & jobHistory.
+1. Mobile Version - Displays firstname, lastname, email & jobHistory.
 
-2. Web version - Displays firstname, lastname, jobHistory, educationHistory & publication history.
+2. Web version - Displays firstname, lastname, email jobHistory, educationHistory & publication history.
+
+3. Mobile app lite - Displays firstname, lastname & email, current job.
 
 We will be able to use same API for both versions of the app with GraphQL.
 
@@ -30,7 +33,7 @@ We will be able to use same API for both versions of the app with GraphQL.
 2.Node JS + Apollo Server - Middleware
 ----------------------------------------
 
-This layer is a NodeJs application & this is orchestrator layer. Apollo Server serves GraphQL requests. Node JS cannot scale, So, this layer uses REST layer as datasource, This layer does the routing to appropriate microservices based on GraphQL entity & mapping the responses from REST to GraphQL. 
+This layer is a NodeJs application & this is orchestrator layer. Apollo Server serves GraphQL requests. Node JS cannot scale, So, this layer uses REST layer as datasource, This layer does the routing to appropriate microservices based on GraphQL entity & mapping the responses from REST to GraphQL. With this technique, you can convert your legacy REST APIs to provide GraphQL capability. 
 
 Steps to setup
 ---------------
