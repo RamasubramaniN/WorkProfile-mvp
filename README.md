@@ -14,7 +14,7 @@ Architecture
 --------------
 We build separate versions of APIs for Mobile & Web. This is because we may not require complete response for Mobile (bandwidth constraint) but Web will require all data.
 
-Here, Linkedin app can have multiple versions.
+Here, WorkProfile app can have multiple versions.
 
 1. Mobile Version - Displays firstname, lastname, email & jobHistory.
 
@@ -250,7 +250,7 @@ Following REST API request is made from middleware
 API Request
 -------------
 
-http://localhost:8080/linkedin/users/9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6
+http://localhost:8080/WorkProfile/users/9a0735fb-fb2b-41c3-9edb-0b1334fbe6b6
 
 
 API Response
@@ -343,9 +343,9 @@ Create Keyspace
 Create Keyspaces for our tables.
 
 ```
-cqlsh> CREATE KEYSPACE linkedinkeyspace WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
+cqlsh> CREATE KEYSPACE WorkProfilekeyspace WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 3};
 
-cqlsh> USE linkedinkeyspace;
+cqlsh> USE WorkProfilekeyspace;
 ```
 
 Create tables
