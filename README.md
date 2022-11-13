@@ -6,9 +6,9 @@ This Application has 3 sub projects.
 
 1. React + Apollo Client - Front End - Yet to build.
 
-2. Node JS + Apollo Server - Middleware - https://github.com/RamasubramaniN/Linkedin-mvp/tree/master/linkedin-apolloserver-middleware
+2. Node JS + Apollo Server - Middleware - https://github.com/RamasubramaniN/WorkProfile-mvp/tree/master/WorkProfile-apolloserver-middleware
 
-3. REST + Spring Boot + Cassandra - Backend - https://github.com/RamasubramaniN/Linkedin-mvp/tree/master/linkedin-rest-backend
+3. REST + Spring Boot + Cassandra - Backend - https://github.com/RamasubramaniN/Linkedin-mvp/tree/master/WorkProfile-rest-backend
 
 Architecture
 --------------
